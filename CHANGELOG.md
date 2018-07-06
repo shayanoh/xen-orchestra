@@ -5,11 +5,13 @@
 ### Enhancements
 
 - [Users] Display user groups [#3719](https://github.com/vatesfr/xen-orchestra/issues/3719) (PR [#3740](https://github.com/vatesfr/xen-orchestra/pull/3740))
+- Web hooks plugin [#1946](https://github.com/vatesfr/xen-orchestra/issues/1946)
 
 ### Bug fixes
 
 ### Released packages
 
+- xo-server-hooks: 0.1.0
 - xo-server v5.32.0
 - xo-web v5.32.0
 

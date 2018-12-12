@@ -1,4 +1,3 @@
-import df from '@sindresorhus/df'
 import execa from 'execa'
 import fs from 'fs-extra'
 import { join } from 'path'
@@ -89,9 +88,5 @@ export default class NfsHandler extends LocalHandler {
     await this._mount()
 
     return this._remote
-  }
-
-  async _getInfoDisk(dir) {
-    return df.file(dir)
   }
 }

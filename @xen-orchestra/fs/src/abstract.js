@@ -414,7 +414,7 @@ export default class RemoteHandlerAbstract {
   async _forget(): Promise<void> {}
 
   async _getInfo() {
-    throw new Error('Not implemented')
+    return {}
   }
 
   async _getSize(file: File): Promise<number> {

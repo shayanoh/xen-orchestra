@@ -103,6 +103,21 @@ handlers.forEach(url => {
       })
     })
 
+    describe('#getInfo()', () => {
+      it('should return an object with info', async () => {
+        const info = await handler.getInfo()
+
+        if (Object.keys(info).length !== 0) {
+          expect(info).toEqual(
+            expect.objectContaining({
+              available: expect.any(Number),
+              used: expect.any(Number),
+            })
+          )
+        }
+      })
+    })
+
     describe('#getSize()', () => {
       beforeEach(() => handler.outputFile('file', TEST_DATA))
 

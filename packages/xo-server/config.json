@@ -46,7 +46,9 @@
     "mountsDir": "/run/xo-server/mounts",
 
     // timeout in milliseconds (set to 0 to disable)
-    "timeout": 600e3
+    "timeout": 600e3,
+    // timeout to getInfo on remote in milliseconds
+    "timeoutInfo": 5e3
   },
 
   // Whether API logs should contains the full request/response on

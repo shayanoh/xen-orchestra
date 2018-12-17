@@ -49,6 +49,7 @@
     "prepublishOnly": "yarn run build"
   },
   "dependencies": {
+    "@xen-orchestra/async-map": "^0.0.0",
     "lodash": "^4.17.11",
     "micromatch": "^3.1.10"
   }

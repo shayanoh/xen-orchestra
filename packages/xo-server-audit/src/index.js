@@ -7,7 +7,6 @@ const NAMESPACE = 'audit'
 class AuditXoPlugin {
   constructor({ xo }) {
     this._xo = xo
-    this._removeApiMethods = undefined
     this._runningTasks = new Set()
     this._tasksToNotLog = new Set()
     this._listeners = {
@@ -18,22 +17,19 @@ class AuditXoPlugin {
     xo.getLogger(NAMESPACE).then(logger => {
       this._logger = logger
     })
-  }
 
-  load() {
-    const xo = this._xo
-
-    this._removeApiMethods = xo.addApiMethods({
+    xo.addApiMethods({
       'plugin.audit.getLogs': this._getLogs.bind(this),
       'plugin.audit.clearLogs': this._clearLogs.bind(this),
     })
+  }
 
+  load() {
     // add listeners
-    map(this._listeners, (method, event) => xo.on(event, method))
+    map(this._listeners, (method, event) => this._xo.on(event, method))
   }
 
   unload() {
-    this._removeApiMethods()
     this._runningTasks.clear()
     this._tasksToNotLog.clear()
 
